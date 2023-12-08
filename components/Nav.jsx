@@ -19,6 +19,7 @@ const Nav = () => {
   }, []);
 
   return (
+    // {以下為左邊的 Navbar Logo 圖片/}
     <nav className='flex-between w-full mb-16 pt-3'>
       <Link href='/' className='flex gap-2 flex-center'>
         <Image
@@ -31,8 +32,9 @@ const Nav = () => {
         <p className='logo_text'>Promptopia</p>
       </Link>
 
-      {/* Desktop Navigation */}
+      {/* 以下為桌面版 */}
       <div className='sm:flex hidden'>
+      {/* 以下為登入狀態，可以讓使用者選擇是否要登出 */}
         {isUserLoggedIn ? (
           <div className='flex gap-3 md:gap-5'>
             <Link href='/create-prompt' className='black_btn'>
@@ -55,6 +57,7 @@ const Nav = () => {
           </div>
         ) : (
           <>
+           {/* 以下為登出狀態，可以讓使用者選擇是否要登入 */}
             {providers &&
               Object.values(providers).map((provider) => (
                 <button
@@ -72,8 +75,9 @@ const Nav = () => {
         )}
       </div>
 
-      {/* Mobile Navigation */}
+      {/* 以下為手機版樣式設定 */}
       <div className='sm:hidden flex relative'>
+       {/* 以下為登入狀態，可以讓使用者選擇是否要登出 */}
         {isUserLoggedIn ? (
           <div className='flex'>
             <Image
@@ -84,7 +88,7 @@ const Nav = () => {
               alt='profile'
               onClick={() => setToggleDropdown(!toggleDropdown)}
             />
-
+            {/* 以下為下拉選單*/}
             {toggleDropdown && (
               <div className='dropdown'>
                 <Link
@@ -116,6 +120,7 @@ const Nav = () => {
           </div>
         ) : (
           <>
+           {/* 以下為登出狀態，可以讓使用者選擇是否要登入 */}
             {providers &&
               Object.values(providers).map((provider) => (
                 <button
