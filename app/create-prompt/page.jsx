@@ -21,7 +21,7 @@ const CreatePrompt = () => {
                 method:'POST',
                 body:JSON.stringify({
                     prompt:post.prompt,
-                    tage:post.tag,
+                    tag:post.tag,
                     userId:session?.user.id
                 })
             })
@@ -31,7 +31,7 @@ const CreatePrompt = () => {
         }catch(e){
             console.log('無法建立新的 Post',e)
         }finally{
-            setIsSubmitting(false);
+            setSubmitting(false);
         }
         
     }
